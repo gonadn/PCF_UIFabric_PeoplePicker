@@ -1,0 +1,20 @@
+{
+    "extends": "./node_modules/pcf-scripts/tsconfig_base.json",
+    "compilerOptions": {
+        "target": "es5",
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "declaration": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "outDir": "lib",
+        "inlineSources": false,
+        "strictNullChecks": false,
+        "noUnusedLocals": false,
+        "typeRoots": ["node_modules/@types"]
+
+    }
+}

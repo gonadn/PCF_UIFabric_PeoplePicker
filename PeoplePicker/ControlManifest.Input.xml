@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="UIFPP" constructor="PeoplePicker" version="1.1.0" display-name-key="PeoplePicker" description-key="PeoplePicker description" control-type="standard">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="peoplePicker" display-name-key="peoplePicker" description-key="field_Value" of-type="Multiple" usage="bound" required="true" />
+    <property name="entityName" display-name-key="entityName" description-key="entity_value" of-type="SingleLine.Text" usage="input" required="true" default-value="systemuser"/>
+
+    <resources>
+      <code path="index.ts" order="1"/>
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/PeoplePicker.css" order="1" />
+      <resx path="strings/PeoplePicker.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+     <feature-usage>
+			  <uses-feature name="WebAPI" required="true" />
+		</feature-usage>
+  </control>
+</manifest>
