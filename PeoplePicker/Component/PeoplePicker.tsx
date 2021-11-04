@@ -45,7 +45,7 @@ export const PeoplePickerNormal = React.memo((props: PeoplePickerProps) => {
         const secTxt: string = record.getFormattedValue('JobTitle');
         const txt: string = record.getFormattedValue('DisplayName');
         const _upn: string = record.getFormattedValue('UserPrincipalName');
-
+// Test
         if (txt !== null && txt !== undefined) {
           recObj = {
             key: count++,
