@@ -1,0 +1,341 @@
+[
+    {
+        "id": "4e2d3b3d-ece7-4d3a-9b74-6d8049029acd",
+        "displayName": "MOD Administrator",
+        "givenName": "MOD",
+        "surname": "Administrator",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": null,
+        "companyName": null,
+        "yomiCompany": null,
+        "department": null,
+        "officeLocation": null,
+        "profession": null,
+        "userPrincipalName": "admin@M365x044686.onmicrosoft.com",
+        "imAddress": null,
+        "scoredEmailAddresses": [
+            {
+                "address": "admin@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 1,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "425-555-0100"
+            },
+            {
+                "type": "mobile",
+                "number": "425-555-0101"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "01be8a32-0a9c-45c5-8693-7b3326640ff4",
+        "displayName": "Mark 8 Project Team",
+        "givenName": null,
+        "surname": null,
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": null,
+        "companyName": null,
+        "yomiCompany": null,
+        "department": null,
+        "officeLocation": null,
+        "profession": null,
+        "userPrincipalName": null,
+        "imAddress": null,
+        "scoredEmailAddresses": [
+            {
+                "address": "Mark8ProjectTeam@M365x044686.onmicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [],
+        "personType": {
+            "class": "Group",
+            "subclass": "UnifiedGroup"
+        }
+    },
+    {
+        "id": "b4a4128f-830b-4ef6-93d5-785a278c7665",
+        "displayName": "Megan Bowen",
+        "givenName": "Megan",
+        "surname": "Bowen",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Marketing Manager",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Marketing",
+        "officeLocation": "12/1110",
+        "profession": null,
+        "userPrincipalName": "MeganB@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:meganb@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "MeganB@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 412 555 0109"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "b7fe588f-fa61-4c31-87bb-9fdde648b1a9",
+        "displayName": "Johanna Lorenz",
+        "givenName": "Johanna",
+        "surname": "Lorenz",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Senior Engineer",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Engineering",
+        "officeLocation": "23/2102",
+        "profession": null,
+        "userPrincipalName": "JohannaL@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:johannal@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "JohannaL@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 502 555 0102"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "4972bf1e-a753-439b-86d1-9ec511c4775c",
+        "displayName": "Adele Vance",
+        "givenName": "Adele",
+        "surname": "Vance",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Retail Manager",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Retail",
+        "officeLocation": "18/2111",
+        "profession": null,
+        "userPrincipalName": "AdeleV@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:adelev@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "AdeleV@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 425 555 0109"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "ca5203ee-e1f6-4717-91f4-ee3169a9257a",
+        "displayName": "Alex Wilber",
+        "givenName": "Alex",
+        "surname": "Wilber",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Marketing Assistant",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Marketing",
+        "officeLocation": "131/1104",
+        "profession": null,
+        "userPrincipalName": "AlexW@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:alexw@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "AlexW@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 858 555 0110"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "a4373742-f944-4df6-a6a2-7a418cff9dde",
+        "displayName": "Lidia Holloway",
+        "givenName": "Lidia",
+        "surname": "Holloway",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Product Manager",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Engineering",
+        "officeLocation": "20/2107",
+        "profession": null,
+        "userPrincipalName": "LidiaH@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:lidiah@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "LidiaH@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 918 555 0107"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "0b4cf76a-a871-4c22-96cf-831aa916fbdb",
+        "displayName": "Nestor Wilke",
+        "givenName": "Nestor",
+        "surname": "Wilke",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Director",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Operations",
+        "officeLocation": "36/2121",
+        "profession": null,
+        "userPrincipalName": "NestorW@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:nestorw@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "NestorW@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 206 555 0105"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "de11d123-fdd4-46ca-922f-8e83c30fd68d",
+        "displayName": "Pradeep Gupta",
+        "givenName": "Pradeep",
+        "surname": "Gupta",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Accountant",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Finance",
+        "officeLocation": "98/2202",
+        "profession": null,
+        "userPrincipalName": "PradeepG@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:pradeepg@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "PradeepG@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+20 255501070"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    },
+    {
+        "id": "7a8834d4-139d-4978-9738-e4b228eb941c",
+        "displayName": "Lee Gu",
+        "givenName": "Lee",
+        "surname": "Gu",
+        "birthday": null,
+        "personNotes": null,
+        "isFavorite": false,
+        "jobTitle": "Director",
+        "companyName": null,
+        "yomiCompany": null,
+        "department": "Manufacturing",
+        "officeLocation": "23/3101",
+        "profession": null,
+        "userPrincipalName": "LeeG@M365x044686.OnMicrosoft.com",
+        "imAddress": "sip:leeg@m365x044686.onmicrosoft.com",
+        "scoredEmailAddresses": [
+            {
+                "address": "LeeG@M365x044686.OnMicrosoft.com",
+                "relevanceScore": 0,
+                "selectionLikelihood": "notSpecified"
+            }
+        ],
+        "phones": [
+            {
+                "type": "business",
+                "number": "+1 913 555 0101"
+            }
+        ],
+        "personType": {
+            "class": "Person",
+            "subclass": "OrganizationUser"
+        }
+    }
+]

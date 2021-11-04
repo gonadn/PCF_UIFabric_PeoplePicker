@@ -1,0 +1,38 @@
+// https://docs.microsoft.com/en-us/powerapps/developer/component-framework/import-custom-controls
+
+New Component:
+pac pcf init --namespace PCFUIFabricPeoplePickerNS --name PCF_UIFabric_PeoplePicker --template dataset
+
+
+
+1: pac solution init --publisher-name gonadn --publisher-prefix dev
+
+2: pac solution add-reference --path C:\Source\PowerApps\pcf\Controls\PCF_UIFabric_PeoplePicker
+
+3: msbuild /t:build /restore
+
+4: msbuild
+
+
+Deploying code components:
+
+pac pcf push --publisher-prefix <your publisher prefix>
+
+
+ *******************************************************************************
+
+Create your authentication profile using the command:
+
+pac auth create --url https://xyz.crm.dynamics.com 
+ - If you have previously created an authentication profile, you can view all the existing profiles using the command:
+
+ pac auth list 
+
+- To switch between the previously created authentication profiles, use the command:
+
+ pac auth select --index <index of the active profile>
+
+
+To get the basic information about the environment, use the following command. The connection will be made using the default authentication profile.
+
+pac org who 

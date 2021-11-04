@@ -1,9 +1,18 @@
 import * as React from 'react';
-import { Checkbox } from '@fluentui/react';
-import { IPersonaProps } from '@fluentui/react';
-import { IBasePickerSuggestionsProps, NormalPeoplePicker, ValidationState } from '@fluentui/react';
-import { people, mru } from '@uifabric/example-data';
-import '@uifabric/icons';
+import { useState, useEffect } from 'react';
+import { IPersonaProps } from '@fluentui/react/lib/Persona';
+import { IBasePickerSuggestionsProps, NormalPeoplePicker, ValidationState } from '@fluentui/react/lib/Pickers';
+// import { people, mru } from '@fluentui/example-data';
+
+
+type DataSet = ComponentFramework.PropertyHelper.DataSetApi.EntityRecord;
+
+export interface PeoplePickerProps {
+  records: Record<string, ComponentFramework.PropertyHelper.DataSetApi.EntityRecord>;
+  sortedRecordIds: string[];
+  width?: number;
+  height?: number;
+}
 
 const suggestionProps: IBasePickerSuggestionsProps = {
   suggestionsHeaderText: 'Suggested People',
@@ -15,25 +24,56 @@ const suggestionProps: IBasePickerSuggestionsProps = {
   suggestionsContainerAriaLabel: 'Suggested contacts',
 };
 
-const checkboxStyles = {
-  root: {
-    marginTop: 10,
-  },
-};
+export const PeoplePickerNormal = React.memo((props: PeoplePickerProps) => {
+  const {records, sortedRecordIds, width, height} = props;
 
-export const PeoplePickerNormal: React.FunctionComponent = () => {
   const [delayResults, setDelayResults] = React.useState(false);
   const [isPickerDisabled, setIsPickerDisabled] = React.useState(false);
-  const [mostRecentlyUsed, setMostRecentlyUsed] = React.useState<IPersonaProps[]>(mru);
-  const [peopleList, setPeopleList] = React.useState<IPersonaProps[]>(people);
-
+  const [mostRecentlyUsed, setMostRecentlyUsed] = React.useState<IPersonaProps[]>([]);
+  const [peopleList, setPeopleList] = React.useState<IPersonaProps[]>([]);
   const picker = React.useRef(null);
 
-  const onFilterChanged = (
-    filterText: string,
-    currentPersonas: IPersonaProps[],
-    limitResults?: number,
-  ): IPersonaProps[] | Promise<IPersonaProps[]> => {
+  useEffect(() => {
+    let count: number = 1;
+    const items: any[] = [];
+    let sortedRecords: any[] = [];
+    if (props.sortedRecordIds.length !== 0) {
+      sortedRecords = props.sortedRecordIds.map((id: any) => {
+        let recObj: any;
+        const record = records[id];
+        const _id: string = record.getFormattedValue('Id');
+        const secTxt: string = record.getFormattedValue('JobTitle');
+        const txt: string = record.getFormattedValue('DisplayName');
+        const _upn: string = record.getFormattedValue('UserPrincipalName');
+
+        if (txt !== null && txt !== undefined) {
+          recObj = {
+            key: count++,
+            secondaryText: secTxt,
+            tertiaryText: 'In a meeting',
+            text: txt,
+            optionalText: '',
+            presence: 2,
+            isValid: true,
+            imageUrl: '',
+            imageInitials: 'IN',
+            upn: _upn
+          };
+        }
+        if(recObj!==null&&recObj!==undefined){
+          items.push(recObj);
+        }
+        //return recObj;
+      });
+      
+      if (items.length !== 0) {
+        console.log(items);
+        setPeopleList(items);
+      }
+    }
+  }, [records, sortedRecordIds, width, height]);
+
+  const onFilterChanged = (filterText: string, currentPersonas: IPersonaProps[], limitResults?: number): IPersonaProps[] | Promise<IPersonaProps[]> => {
     if (filterText) {
       let filteredPersonas: IPersonaProps[] = filterPersonasByText(filterText);
 
@@ -49,7 +89,7 @@ export const PeoplePickerNormal: React.FunctionComponent = () => {
     return peopleList.filter(item => doesTextStartWith(item.text as string, filterText));
   };
 
-  const filterPromise = (personasToReturn: IPersonaProps[]): IPersonaProps[] | Promise<IPersonaProps[]> => {
+  const filterPromise = (personasToReturn: IPersonaProps[]) => {
     if (delayResults) {
       return convertResultsToPromise(personasToReturn);
     } else {
@@ -80,13 +120,6 @@ export const PeoplePickerNormal: React.FunctionComponent = () => {
     }
   };
 
-  const onDisabledButtonClick = (): void => {
-    setIsPickerDisabled(!isPickerDisabled);
-  };
-
-  const onToggleDelayResultsChange = (): void => {
-    setDelayResults(!delayResults);
-  };
 
   return (
     <div>
@@ -99,6 +132,7 @@ export const PeoplePickerNormal: React.FunctionComponent = () => {
         key={'normal'}
         onRemoveSuggestion={onRemoveSuggestion}
         onValidateInput={validateInput}
+        selectionAriaLabel={'Selected contacts'}
         removeButtonAriaLabel={'Remove'}
         inputProps={{
           onBlur: (ev: React.FocusEvent<HTMLInputElement>) => console.log('onBlur called'),
@@ -112,7 +146,7 @@ export const PeoplePickerNormal: React.FunctionComponent = () => {
       />
     </div>
   );
-};
+});
 
 function doesTextStartWith(text: string, filterText: string): boolean {
   return text.toLowerCase().indexOf(filterText.toLowerCase()) === 0;
@@ -164,3 +198,4 @@ function onInputChange(input: string): string {
 
   return input;
 }
+
