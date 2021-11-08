@@ -22,16 +22,17 @@
       <property-set name="Peoples" display-name-key="Peoples_Disp" description-key="Peoples_Desc" of-type="SingleLine.Text" usage="bound" required="true" />
     </data-set> -->
      <data-set name="people" display-name-key="DataSetGridProperty" cds-data-set-options="displayCommandBar:true;displayViewSelector:true;displayQuickFind:true"></data-set>
+
       <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->
       <!-- UNCOMMENT TO ADD PROPERTY-SET NODE
       <property-set name="samplePropertySet" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
       -->
+    <property name="selectedvalue" display-name-key="SelectedValue" description-key="Selected PeoplePicker Value" of-type="OptionSet" usage="bound" required="true"/>
     <resources>
       <code path="index.ts" order="1"/>
-      <!-- UNCOMMENT TO ADD MORE RESOURCES
-      <css path="css/PCFUIFabricPeoplePicker.css" order="1" />
-      <resx path="strings/PCFUIFabricPeoplePicker.1033.resx" version="1.0.0" />
-      -->
+      <css path="Component/Peoplepicker.scss" order="1" />
+      <!-- <resx path="strings/PCFUIFabricPeoplePicker.1033.resx" version="1.0.0" /> -->
+     
     </resources>
     <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
     <feature-usage>

@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { IPersonaProps } from '@fluentui/react/lib/Persona';
 import { IBasePickerSuggestionsProps, NormalPeoplePicker, ValidationState } from '@fluentui/react/lib/Pickers';
 // import { people, mru } from '@fluentui/example-data';
+import { IPeoplePickerProps } from './IPeoplePickerProps';
 
-
-type DataSet = ComponentFramework.PropertyHelper.DataSetApi.EntityRecord;
-
-export interface PeoplePickerProps {
-  records: Record<string, ComponentFramework.PropertyHelper.DataSetApi.EntityRecord>;
-  sortedRecordIds: string[];
-  width?: number;
-  height?: number;
-}
+// export interface IPeoplePickerProps {
+//   records: Record<string, ComponentFramework.PropertyHelper.DataSetApi.EntityRecord>;
+//   sortedRecordIds: string[];
+//   width?: number;
+//   height?: number;
+// }
 
 const suggestionProps: IBasePickerSuggestionsProps = {
   suggestionsHeaderText: 'Suggested People',
@@ -24,27 +22,31 @@ const suggestionProps: IBasePickerSuggestionsProps = {
   suggestionsContainerAriaLabel: 'Suggested contacts',
 };
 
-export const PeoplePickerNormal = React.memo((props: PeoplePickerProps) => {
-  const {records, sortedRecordIds, width, height} = props;
-
-  const [delayResults, setDelayResults] = React.useState(false);
+// eslint-disable-next-line react/display-name
+export const PeoplePickerNormal = React.memo((props: IPeoplePickerProps) => {
+  const {records, sortedRecordIds, width, height, resolveDelay} = props;
+  const [delayResults] = React.useState(false);
   const [isPickerDisabled, setIsPickerDisabled] = React.useState(false);
   const [mostRecentlyUsed, setMostRecentlyUsed] = React.useState<IPersonaProps[]>([]);
   const [peopleList, setPeopleList] = React.useState<IPersonaProps[]>([]);
+  const [currentSelectedItems, setCurrentSelectedItems] = React.useState<IPersonaProps[]>([]);
   const picker = React.useRef(null);
 
   useEffect(() => {
     let count: number = 1;
     const items: any[] = [];
-    let sortedRecords: any[] = [];
     if (props.sortedRecordIds.length !== 0) {
-      sortedRecords = props.sortedRecordIds.map((id: any) => {
+      props.sortedRecordIds.map((id: any) => {
         let recObj: any;
-        const record = records[id];
-        const _id: string = record.getFormattedValue('Id');
-        const secTxt: string = record.getFormattedValue('JobTitle');
-        const txt: string = record.getFormattedValue('DisplayName');
-        const _upn: string = record.getFormattedValue('UserPrincipalName');
+        const record: any = records[id];
+        // const _id: string = record.getFormattedValue('Id');
+        // const secTxt: string = record.getFormattedValue('JobTitle');
+        // const txt: string = record.getFormattedValue('DisplayName');
+        // const _upn: string = record.getFormattedValue('UserPrincipalName');
+
+        const secTxt: string = record.getFormattedValue('jobTitle');
+        const txt: string = record.getFormattedValue('displayName');
+        const _upn: string = record.getFormattedValue('userPrincipalName');
 
         if (txt !== null && txt !== undefined) {
           recObj = {
@@ -71,8 +73,9 @@ export const PeoplePickerNormal = React.memo((props: PeoplePickerProps) => {
         setPeopleList(items);
       }
     }
-  }, [records, sortedRecordIds, width, height]);
+  }, [records, sortedRecordIds, width, height, resolveDelay]);
 
+  
   const onFilterChanged = (filterText: string, currentPersonas: IPersonaProps[], limitResults?: number): IPersonaProps[] | Promise<IPersonaProps[]> => {
     if (filterText) {
       let filteredPersonas: IPersonaProps[] = filterPersonasByText(filterText);
@@ -120,6 +123,21 @@ export const PeoplePickerNormal = React.memo((props: PeoplePickerProps) => {
     }
   };
 
+  const getTextFromItem = (persona: IPersonaProps): string => {
+    return persona.text as string;
+  }
+
+  const onItemsChange = (items: any[]): void => {
+    setCurrentSelectedItems(items);
+    props.onChange(items);
+  };
+
+  const rootContainerStyle: any = React.useMemo(() => {
+    return {
+        height: height,
+        width: width,
+    };
+  }, [width, height]);
 
   return (
     <div>
@@ -128,21 +146,24 @@ export const PeoplePickerNormal = React.memo((props: PeoplePickerProps) => {
         onEmptyInputFocus={returnMostRecentlyUsed}
         getTextFromItem={getTextFromItem}
         pickerSuggestionsProps={suggestionProps}
-        className={'ms-PeoplePicker'}
+        // className={'ms-PeoplePicker'}
         key={'normal'}
         onRemoveSuggestion={onRemoveSuggestion}
         onValidateInput={validateInput}
         selectionAriaLabel={'Selected contacts'}
         removeButtonAriaLabel={'Remove'}
-        inputProps={{
-          onBlur: (ev: React.FocusEvent<HTMLInputElement>) => console.log('onBlur called'),
-          onFocus: (ev: React.FocusEvent<HTMLInputElement>) => console.log('onFocus called'),
-          'aria-label': 'People Picker',
-        }}
+        onChange={onItemsChange}
+        selectedItems={currentSelectedItems}
+        // inputProps={{
+        //   onBlur: (ev: React.FocusEvent<HTMLInputElement>) => console.log('onBlur called'),
+        //   onFocus: (ev: React.FocusEvent<HTMLInputElement>) => console.log('onFocus called'),
+        //   'aria-label': 'People Picker',
+        // }}
         componentRef={picker}
         onInputChange={onInputChange}
         resolveDelay={300}
         disabled={isPickerDisabled}
+        styles={{ root: { width: width, height: height } }}
       />
     </div>
   );
@@ -167,9 +188,11 @@ function convertResultsToPromise(results: IPersonaProps[]): Promise<IPersonaProp
   return new Promise<IPersonaProps[]>((resolve, reject) => setTimeout(() => resolve(results), 2000));
 }
 
-function getTextFromItem(persona: IPersonaProps): string {
-  return persona.text as string;
-}
+// function getTextFromItem(persona: IPersonaProps): string {
+//   console.log(persona.text);
+  
+//   return persona.text as string;
+// }
 
 function validateInput(input: string): ValidationState {
   if (input.indexOf('@') !== -1) {

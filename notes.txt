@@ -1,11 +1,11 @@
 // https://docs.microsoft.com/en-us/powerapps/developer/component-framework/import-custom-controls
 
 New Component:
-pac pcf init --namespace PCFUIFabricPeoplePickerNS --name PCF_UIFabric_PeoplePicker --template dataset
+pac pcf init --namespace PCFDemoNS --name PCFDemo --template field
 
 
 
-1: pac solution init --publisher-name gonadn --publisher-prefix dev
+1: pac solution init --publisher-name developer --publisher-prefix dev
 
 2: pac solution add-reference --path C:\Source\PowerApps\pcf\Controls\PCF_UIFabric_PeoplePicker
 

@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 import { PeoplePickerNormal } from './Component/Peoplepicker';
+import { IPeoplePickerProps } from './../PeoplePicker/Component/IPeoplePickerProps';
 
 initializeIcons(undefined, { disableWarnings: true });
 
@@ -12,6 +13,7 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 	private _context: ComponentFramework.Context<IInputs>;
 	container: HTMLDivElement;
 	sortedRecordsIds: string[] = [];
+	selectedvalue: any | undefined;
 	//records: any[];
 	records: {
 		[id: string]: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord;
@@ -25,9 +27,15 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 		// Add control initialization code
 		this.notifyOutputChanged = notifyOutputChanged;
 		this._context = context;
+		this._context.mode.trackContainerResize(true);
 		this.container = container;
 	}
 
+	public handleCallback = (selectedUser: any) =>{
+		this.selectedvalue = selectedUser;
+		console.log(selectedUser);
+		this.notifyOutputChanged();
+	}
 
 	public updateView(context: any): void
 	{
@@ -42,12 +50,15 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 			context.mode.allocatedHeight as unknown as string
 		);
 
-		const objProp = {
+
+		const objProp: IPeoplePickerProps = {
 			records: this.records,
 			sortedRecordIds: this.sortedRecordsIds,
 			width: allocatedWidth,
 			height: allocatedHeight,
-		};
+			resolveDelay: 300,
+			onChange: this.handleCallback
+		};	
 
 		ReactDOM.render(
 			React.createElement(
@@ -61,7 +72,7 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 
 	public getOutputs(): IOutputs
 	{
-		return {};
+		return { value: this.selectedvalue } as IOutputs;
 	}
 
 
