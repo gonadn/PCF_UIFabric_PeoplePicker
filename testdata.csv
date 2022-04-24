@@ -1,0 +1,43 @@
+imageUrl;imageInitials;text;secondaryText;tertiaryText;optionalText;isValid;presence
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;PV;Annie Lindqvist;Designer;In a meeting;Available at 4:00pm;TRUE;2
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;AR;Aaron Reid;Designer;In a meeting;Available at 4:00pm;TRUE;6
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;AL;Alex Lundberg;Software Developer;In a meeting;Available at 4:00pm;TRUE;4
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;RK;Roko Kolar;Financial Analyst;In a meeting;Available at 4:00pm;TRUE;1
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;CB;Christian Bergqvist;Sr. Designer;In a meeting;Available at 4:00pm;TRUE;2
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Valentina Lovric;Design Developer;In a meeting;Available at 4:00pm;TRUE;2
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Maor Sharett;UX Designer;In a meeting;Available at 4:00pm;TRUE;3
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;PV;Anny Lindqvist;Designer;In a meeting;Available at 4:00pm;TRUE;6
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;AR;Aron Reid;Designer;In a meeting;Available at 4:00pm;TRUE;4
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;AL;Alix Lundberg;Software Developer;In a meeting;Available at 4:00pm;TRUE;1
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;RK;Roko Kular;Financial Analyst;In a meeting;Available at 4:00pm;TRUE;0
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;CB;Christian Bergqvest;Sr. Designer;In a meeting;Available at 4:00pm;TRUE;6
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Valintina Lovric;Design Developer;In a meeting;Available at 4:00pm;TRUE;6
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Maor Sharet;UX Designer;In a meeting;Available at 4:00pm;TRUE;5
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Anny Lindqvest;SDE;In a meeting;Available at 4:00pm;TRUE;5
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Alix Lunberg;SE;In a meeting;Available at 4:00pm;TRUE;3
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Annie Lindqvest;SDET;In a meeting;Available at 4:00pm;TRUE;2
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Alixander Lundberg;Senior Manager of SDET;In a meeting;Available at 4:00pm;TRUE;1
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Anny Lundqvist;Junior Manager of Software;In a meeting;Available at 4:00pm;TRUE;3
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Maor Shorett;UX Designer;In a meeting;Available at 4:00pm;TRUE;5
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Valentina Lovrics;Design Developer;In a meeting;Available at 4:00pm;TRUE;2
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Maor Sharet;UX Designer;In a meeting;Available at 4:00pm;TRUE;2
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png;VL;Valentina Lovrecs;Design Developer;In a meeting;Available at 4:00pm;TRUE;5
+https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png;MS;Maor Sharitt;UX Designer;In a meeting;Available at 4:00pm;TRUE;1
+./images/persona-male.png;MS;Maor Shariett;Design Developer;In a meeting;Available at 3:00pm;TRUE;2
+./images/persona-female.png;AL;Alix Lundburg;UX Designer;In a meeting;Available at 3:00pm;TRUE;3
+./images/persona-female.png;VL;Valantena Lovric;UX Designer;In a meeting;Available at 4:00pm;TRUE;6
+./images/persona-female.png;VL;Velatine Lourvric;UX Designer;In a meeting;Available at 4:00pm;TRUE;2
+./images/persona-female.png;VL;Valentyna Lovrique;UX Designer;In a meeting;Available at 4:00pm;TRUE;6
+./images/persona-female.png;AL;Annie Lindquest;UX Designer;In a meeting;Available at 4:00pm;TRUE;4
+./images/persona-female.png;AL;Anne Lindquist;UX Designer;In a meeting;Available at 4:00pm;TRUE;5
+./images/persona-female.png;AL;Ann Lindqiest;UX Designer;In a meeting;Available at 4:00pm;TRUE;2
+./images/persona-male.png;AR;Aron Reid;UX Designer;In a meeting;Available at 4:00pm;TRUE;3
+./images/persona-male.png;AR;Aaron Reed;UX Designer;In a meeting;Available at 4:00pm;TRUE;1
+./images/persona-female.png;AL;Alix Lindberg;UX Designer;In a meeting;Available at 4:00pm;TRUE;6
+./images/persona-male.png;AL;Alan Lindberg;UX Designer;In a meeting;Available at 4:00pm;TRUE;6
+./images/persona-male.png;MS;Maor Sharit;UX Designer;In a meeting;Available at 4:00pm;TRUE;1
+./images/persona-male.png;MS;Maorr Sherit;UX Designer;In a meeting;Available at 4:00pm;TRUE;2
+./images/persona-male.png;AL;Alex Lindbirg;Software Developer;In a meeting;Available at 4:00pm;TRUE;4
+./images/persona-male.png;AL;Alex Lindbarg;Software Developer;In a meeting;Available at 4:00pm;TRUE;2
+GO;Group One;TRUE;TRUE;;;;
+GT;Group Two;TRUE;TRUE;;;;

@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { IPersonaProps } from '@fluentui/react/lib/Persona';
 import { IBasePickerSuggestionsProps, NormalPeoplePicker, ValidationState } from '@fluentui/react/lib/Pickers';
-// import { people, mru } from '@fluentui/example-data';
+import { people, mru } from '@fluentui/example-data';
 import { IPeoplePickerProps } from './IPeoplePickerProps';
-
+const { convertArrayToCSV } = require('convert-array-to-csv');
+const converter = require('convert-array-to-csv');
 // export interface IPeoplePickerProps {
 //   records: Record<string, ComponentFramework.PropertyHelper.DataSetApi.EntityRecord>;
 //   sortedRecordIds: string[];
@@ -32,10 +33,19 @@ export const PeoplePickerNormal = React.memo((props: IPeoplePickerProps) => {
   const [currentSelectedItems, setCurrentSelectedItems] = React.useState<IPersonaProps[]>([]);
   const picker = React.useRef(null);
 
-  useEffect(() => {
+  useMemo(() => {
+    //console.log(people);
+    // const header = ['key','imageUrl', 'imageInitials', 'text','secondaryText','tertiaryText','optionalText','isValid','presence'];
+    //  const csvFromArrayOfArrays = convertArrayToCSV(people, {
+    //   header,
+    //   separator: ';'
+    //  });
+    //  console.log(csvFromArrayOfArrays);
+
     let count: number = 1;
     const items: any[] = [];
     if (props.sortedRecordIds.length !== 0) {
+      console.log(props)
       props.sortedRecordIds.map((id: any) => {
         let recObj: any;
         const record: any = records[id];
@@ -70,9 +80,11 @@ export const PeoplePickerNormal = React.memo((props: IPeoplePickerProps) => {
       
       if (items.length !== 0) {
         console.log(items);
-        setPeopleList(items);
+        setPeopleList(people);
       }
     }
+    
+    setPeopleList(people);
   }, [records, sortedRecordIds, width, height, resolveDelay]);
 
   

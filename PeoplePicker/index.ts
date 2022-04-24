@@ -6,9 +6,7 @@ import { PeoplePickerNormal } from './Component/Peoplepicker';
 import { IPeoplePickerProps } from './../PeoplePicker/Component/IPeoplePickerProps';
 
 initializeIcons(undefined, { disableWarnings: true });
-
 export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardControl<IInputs, IOutputs> {
-	private theContainer: HTMLDivElement;
 	private notifyOutputChanged: () => void;
 	private _context: ComponentFramework.Context<IInputs>;
 	container: HTMLDivElement;
@@ -33,7 +31,6 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 
 	public handleCallback = (selectedUser: any) =>{
 		this.selectedvalue = selectedUser;
-		console.log(selectedUser);
 		this.notifyOutputChanged();
 	}
 
@@ -42,14 +39,13 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 		const dataset: any = context.parameters.people;
 		this.records = dataset.records;
 		this.sortedRecordsIds = dataset.sortedRecordIds;
-		// The test harness provides width/height as strings
+
 		const allocatedWidth = parseInt(
 			context.mode.allocatedWidth as unknown as string
 		);
 		const allocatedHeight = parseInt(
 			context.mode.allocatedHeight as unknown as string
 		);
-
 
 		const objProp: IPeoplePickerProps = {
 			records: this.records,
@@ -72,7 +68,8 @@ export class PCFUIFabricPeoplePicker implements ComponentFramework.StandardContr
 
 	public getOutputs(): IOutputs
 	{
-		return { value: this.selectedvalue } as IOutputs;
+		console.log('getOutputs')
+		return { selectedItems: this.selectedvalue } as IOutputs;
 	}
 
 

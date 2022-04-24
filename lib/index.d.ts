@@ -1,7 +1,6 @@
 /// <reference types="powerapps-component-framework" />
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 export declare class PCFUIFabricPeoplePicker implements ComponentFramework.StandardControl<IInputs, IOutputs> {
-    private theContainer;
     private notifyOutputChanged;
     private _context;
     container: HTMLDivElement;
